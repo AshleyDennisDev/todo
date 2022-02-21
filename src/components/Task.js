@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
-import { List } from "antd";
-import Checkbox from "antd/lib/checkbox/Checkbox";
+import { List, Button, Checkbox } from "antd";
 
 export default function Task ({item, setTasks}) {
     const [itemStyle, setItemStyle] = useState({})
     useEffect(() => {
         if(item.done){
-            setItemStyle({ color: 'grey', textDecoration: 'line-through'})
+            setItemStyle({ color: 'grey', display:'flex', width:'auto', textDecoration: 'line-through'})
         }else{
-                setItemStyle({color:'black', textDecoration: 'none'})
+                setItemStyle({color:'black', display:'flex', width:'auto', textDecoration: 'none'})
         }
             }, [item])
     const handleToggleTaskDone = () => {
@@ -32,11 +31,28 @@ fetch(`https://much-todo-ad.uc.r.appspot.com/tasks/${item.id}`, {
     .catch(alert)
 
     }
+
+    const handleDelete = () => {
+        fetch(`https://much-todo-ad.uc.r.appspot.com/tasks/${item.id}`, {
+    method: 'DELETE'
+    })
+    .then(() => {
+        fetch('https://much-todo-ad.uc.r.appspot.com/tasks')
+        .then(response => response.json())
+        .then(data => setTasks(data))
+    })
+    .catch(alert)
+    }
+        
+
+
     return (
         <>
     <List.Item  style={itemStyle} >      
     <Checkbox style={{margin:'10px'}}onClick={handleToggleTaskDone} checked={item.done}></Checkbox>
-{item.task}</List.Item>
+    {item.task}
+    <Button style={{alignSelf:'flex-end'}} type='dashed' danger onClick={handleDelete}>Delete</Button>
+    </List.Item>
     </>
     )
 }
