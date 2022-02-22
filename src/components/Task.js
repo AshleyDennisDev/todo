@@ -48,10 +48,10 @@ fetch(`https://much-todo-ad.uc.r.appspot.com/tasks/${item.id}`, {
 
     return (
         <>
-    <List.Item  style={itemStyle} >      
-    <Checkbox style={{margin:'10px'}}onClick={handleToggleTaskDone} checked={item.done}></Checkbox>
+    <List.Item style={itemStyle}  >      
+    <Checkbox  onClick={handleToggleTaskDone} checked={item.done}></Checkbox>
     {item.task}
-    <Button style={{alignSelf:'flex-end'}} type='dashed' danger onClick={handleDelete}>Delete</Button>
+    <Button type='dashed' danger onClick={handleDelete}>Delete</Button>
     </List.Item>
     </>
     )

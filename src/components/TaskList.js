@@ -17,7 +17,7 @@ export default function TaskList({tasks, setTasks}) {
     // we need to pass this TASKS => data to the List component
     return (
         <List
-        bordered
+        bordered 
         size= 'large'
         dataSource={tasks}
         renderItem = { item =>
