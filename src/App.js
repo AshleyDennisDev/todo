@@ -13,7 +13,7 @@ function App() {
       <Layout.Content style={{opacity:0.75, fontWeight: 'bold' , padding: '30px 200px', marginTop: 100}}>
       <Main></Main>
       </Layout.Content>
-      <Layout.Footer style = {{backgroundColor:'#fff2e8', marginTop:500}}>&copy; 2022, Ashley Dennis</Layout.Footer>
+      <Layout.Footer style = {{backgroundColor:'#fff2e8', textAlign:'center', marginTop:500}}>&copy; 2022, Ashley Dennis</Layout.Footer>
     </Layout>
   );
 }
