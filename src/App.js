@@ -1,19 +1,19 @@
 import { Layout, } from 'antd'
 import { Footer } from 'antd';
 import Main from './components/Main'
+import "./App.css";
 
 
 function App() {
   return (
-    <Layout style={{backgroundColor:'#fff2e8'}}>
-      <Layout.Header 
-     style = {{backgroundColor:'navy blue', position: 'fixed', zIndex: 10, width: '100%', color: 'white', fontSize: '40px', fontWeight: 'bold', textAlign:'centered'}}>
+    <Layout className="background" style={{fontFamily:'Gill Sans'}} >
+      <Layout.Header className="header" >
         Much ToDo
       </Layout.Header>
-      <Layout.Content style={{padding: '50px 100px', marginTop: 100}}>
+      <Layout.Content style={{opacity:0.75, fontWeight: 'bold' , padding: '30px 200px', marginTop: 100}}>
       <Main></Main>
       </Layout.Content>
-      <Layout.Footer style = {{backgroundColor:'#fff2e8'}}>&copy; 2022, Ashley Dennis</Layout.Footer>
+      <Layout.Footer style = {{backgroundColor:'#fff2e8', marginTop:500}}>&copy; 2022, Ashley Dennis</Layout.Footer>
     </Layout>
   );
 }

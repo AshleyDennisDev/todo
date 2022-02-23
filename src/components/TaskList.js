@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { List } from "antd";
 import Task from "./Task";
-import Checkbox from "antd/lib/checkbox/Checkbox";
 
 
 export default function TaskList({tasks, setTasks}) {
