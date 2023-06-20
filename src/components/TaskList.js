@@ -5,7 +5,6 @@ import Task from "./Task";
 
 export default function TaskList({tasks, setTasks}) {
     useEffect(() => {
-        // Get data from API
         fetch('https://much-todo-ad.uc.r.appspot.com/tasks')
         .then(response => response.json())
         .then(data => setTasks(data))
@@ -13,7 +12,6 @@ export default function TaskList({tasks, setTasks}) {
     }, [])
     // tasks has all data
 
-    // we need to pass this TASKS => data to the List component
     return (
         <List
         bordered 

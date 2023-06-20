@@ -1,5 +1,4 @@
 import { Layout, } from 'antd'
-import { Footer } from 'antd';
 import Main from './components/Main'
 import "./App.css";
 
